@@ -1,4 +1,7 @@
+// adapted from module 18 code
+
 const router = require('express').Router();
+
 const thoughtRoutes = require('./thought-routes');
 const userRoutes = require('./user-routes');
 
