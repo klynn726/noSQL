@@ -20,14 +20,14 @@ router
 
 //api/users/:userId (adapted from pizza routes)
 router
-.route('/:id')
+.route('/:userId')
 .get(getUserById)
 .put(putUserById)
 .delete(deleteUserById);
 
 //api/users/:userId/friends/:friendId
 router
-.route('/:id/friends/:friendId')
+.route('/:userId/friends/:friendId')
 .post(postAddFriend)
 .delete(deleteRemoveFriend);
 
