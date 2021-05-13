@@ -1,5 +1,7 @@
 // example code from module 18, module -> Comment.js & Pizza.js
 const { Schema, model, Types } = require('mongoose');
+const dateFormat = require('../utils/dateFormat')
+
 
 const ThoughtSchema = new Schema(
   {
@@ -12,7 +14,7 @@ const ThoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: createdAtVal => dateFormat(createdAtVal)
+      get: dateFormat => dateFormat(dateFormat)
     },
 
   username: {
@@ -37,7 +39,7 @@ const ThoughtSchema = new Schema(
     createdAt: {
       type: Date,
       default: Date.now,
-      get: createdAtVal => dateFormat(createdAtVal)
+      get: dateFormat => dateFormat(dateFormat)
       //like the code in Comment.js of module 18 
     }
   }]
