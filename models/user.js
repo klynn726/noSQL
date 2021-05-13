@@ -1,5 +1,5 @@
 // example code from module 18, module -> Comment.js & Pizza.js
-const { Schema, model } = require('mongoose');
+const { Schema, model, Types } = require('mongoose');
 
 const UserSchema = new Schema(
   {
@@ -16,12 +16,12 @@ const UserSchema = new Schema(
       match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
     // regex is from module 17
     },
-    thoughts: {
+    thought: {
       type: Schema.Types.ObjectId,
       ref: 'Thought'
       // this was from the mod 18 User.js file in the comments section 
     },
-    friends: {
+    friend: {
       type: Schema.Types.ObjectId,
       ref: 'User'
     },
@@ -30,7 +30,7 @@ const UserSchema = new Schema(
   {
     toJSON: {
       virtuals: true,
-      // getters: true
+      getters: true
     },
     // prevents virtuals from creating duplicate of _id as `id`
     id: false
@@ -39,7 +39,7 @@ const UserSchema = new Schema(
 
 // get total count of friends on retrieval
 UserSchema.virtual('friendCount').get(function() {
-  return this.friends.length;
+  return this.friend.length;
 });
 
 const User = model('User', UserSchema);
