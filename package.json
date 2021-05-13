@@ -11,5 +11,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/klynn726/noSQL.git"
+  },
+  "dependencies": {
+    "mongoose": "^5.12.8"
   }
 }
