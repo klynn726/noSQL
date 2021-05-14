@@ -14,7 +14,7 @@ const userController = {
         select: '-__v'
       })
       .select('-__v')
-      .then(dbUserData => res.json(dbUserData))
+      .then(dbData => res.json(dbData))
       .catch(err => {
         console.log(err);
         res.sendStatus(400);

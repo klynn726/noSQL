@@ -16,15 +16,17 @@ const UserSchema = new Schema(
       match: [/^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/]
     // regex is from module 17
     },
-    thought: {
+    thoughts: [{
       type: Schema.Types.ObjectId,
       ref: 'Thought'
+    }
       // this was from the mod 18 User.js file in the comments section 
-    },
-    friend: {
+    ],
+    friends: [{
       type: Schema.Types.ObjectId,
       ref: 'User'
-    },
+    }
+    ],
     
   },
   {
@@ -38,7 +40,7 @@ const UserSchema = new Schema(
 
 // get total count of friends on retrieval
 UserSchema.virtual('friendCount').get(function() {
-  return this.friend.length;
+  return this.friends.length;
 });
 
 const User = model('User', UserSchema);
