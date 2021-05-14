@@ -33,6 +33,8 @@ Katherine Lynn
 
 [Github repository](https://github.com/klynn726/noSQL)
 
+## Walkthrough Videos: 
+
 [Walkthrough Video pt1](https://drive.google.com/file/d/1IJ_9lNFil9XwJdMEblnzSXHYr8aDMTeD/preview)
 
 [Walkthrough Video pt2](https://drive.google.com/file/d/1kX0qFc6CY9QJZZx0YERubCyThxaA1Ea1/preview)
