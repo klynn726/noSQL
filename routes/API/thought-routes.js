@@ -19,7 +19,7 @@ router
 
 // /api/thoughts/:userId
   router
-  .route(':userId')
+  .route('/:userId')
   .post(createThought);
 
 // /api/thoughts/:thoughtId
@@ -31,7 +31,7 @@ router
 
 //api/thoughts/:thoughtId/reactions
 router
-.route(':thoughtId/reactions')
+.route('/reactions')
 .post(createReaction);
 
 //api/thoughts/:thoughtId/reactions/:reactionId
