@@ -1,44 +1,8 @@
 // example code from module 18, module -> Comment.js & Pizza.js
 const { Schema, model, Types } = require('mongoose');
-const dateFormat = require('../utils/dateFormat')
+const dateFormat = require('../utils/dateFormat');
+const reactionSchema = require('./Reaction');
 
-const ReactionSchema = new Schema(
-  {
-      reactionId: {
-      type: Schema.Types.ObjectId,
-      default: () => new Types.ObjectId()
-            // this is like the Comment.js replyId mod 18 code
-
-    },
-    reactionBody: {
-      type: String,
-      required: true,
-      trim:true,
-      maxLength: 280
-    },
-    username: {
-      type: String,
-      required: true,
-      trim:true
-    },
-    createdAt: {
-      type: Date,
-      default: Date.now,
-      get: createdAtVal => dateFormat(createdAtVal)
-            //like the code in Comment.js of module 18 
-
-    }
-  },
-  {
-    toJSON: {
-      getters: true
-    }
-  }
-);
-// this was from module 18 activity 2 creating sub documents but 
-// the instructions also say not to make it a module so i kept it 
-// in the same doc as i was unsure if it would be considered a 
-// module for grading purposes if i seperated it into another doc
 
 const ThoughtSchema = new Schema(
   {
@@ -58,7 +22,7 @@ const ThoughtSchema = new Schema(
     type: String,
     required: true
   },
-  reaction: [ReactionSchema]
+  reaction: [reactionSchema]
 },
   {
     toJSON: {

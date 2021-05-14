@@ -47,7 +47,7 @@ getThoughtById({ params }, res) {
   },
 //update thought 
 updateThought({ params, body }, res) {
-  Thought.findOneAndUpdate({ _id: params.thoughtid }, body, { new: true, runValidators: true })
+  Thought.findOneAndUpdate({ _id: params.thoughtId }, body, { new: true, runValidators: true })
     .then(dbThoughtData => {
       if (!dbThoughtData) {
         res.status(404).json({ message: 'No Thought found with this id!' });
