@@ -31,7 +31,7 @@ router
 
 //api/thoughts/:thoughtId/reactions
 router
-.route('/reactions')
+.route('/:thoughtId/reactions')
 .post(createReaction);
 
 //api/thoughts/:thoughtId/reactions/:reactionId
